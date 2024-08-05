@@ -2,11 +2,12 @@
 #include <vector>
 #include <Windows.h>
 #include "player.h"
+#include "AI.h"
 
 void PLAYER::damage_display(std::string attacker,std::string is_attacked,int damage)
 {
 	std::cout<<std::endl;
-	std::cout<<attacker<<"¸ø"<<is_attacked<<"Ôì³ÉÁË"<<damage<<"µãÉËº¦"<<std::endl;
+	std::cout<<attacker<<"ç»™"<<is_attacked<<"é€ æˆäº†"<<damage<<"ç‚¹ä¼¤å®³"<<std::endl;
 	Sleep(1500);
 }
 
@@ -24,9 +25,9 @@ void PLAYER::selectcard(CARD &c)
 	{
 		std::cout<<"["<<n<<"]"<<c.Cdata[3*n-2]<<std::endl;
 	}
-	std::cout<<"ÇëÊäÈëÄãÐèÒªµÄ¿¨Æ¬ÊýÁ¿."<<std::endl;
+	std::cout<<"è¯·è¾“å…¥ä½ éœ€è¦çš„å¡ç‰‡æ•°é‡."<<std::endl;
 	std::cin>>need;
-	std::cout<<"ÇëÊäÈëÄãÏëÑ¡ÔñµÄ¿¨Æ¬µÄÐòºÅ(²»Í¬ÐòºÅÖ®¼äÓÃ¿Õ¸ñ·Ö¸ô£¬ÊäÈëÍê±Ïºó°´»Ø³µ)"<<std::endl; 
+	std::cout<<"è¯·è¾“å…¥ä½ æƒ³é€‰æ‹©çš„å¡ç‰‡çš„åºå·(ä¸åŒåºå·ä¹‹é—´ç”¨ç©ºæ ¼åˆ†éš”ï¼Œè¾“å…¥å®Œæ¯•åŽæŒ‰å›žè½¦)"<<std::endl; 
 	while(std::cin>>num)
 	{
 		times++;
@@ -45,12 +46,12 @@ void PLAYER::selectcard(CARD &c)
 		this->Pdata.push_back(c.Cdata[3*index-1]);
 		this->Pdata.push_back(c.Cdata[3*index]);
 	}
-	std::cout<<"[From Console] Êý¾Ý×°ÔØÍê±Ï!"<<std::endl;
+	std::cout<<"[From Console] æ•°æ®è£…è½½å®Œæ¯•!"<<std::endl;
 }
 
 void PLAYER::operate(AI &a,DISPLAY &d)
 {
-	std::cout<<"ÇëÊäÈëÏëÒª·¢Æð¹¥»÷µÄÎÒ·½¿¨Æ¬ÐòºÅ."<<std::endl; 
+	std::cout<<"è¯·è¾“å…¥æƒ³è¦å‘èµ·æ”»å‡»çš„æˆ‘æ–¹å¡ç‰‡åºå·."<<std::endl; 
 	int index_p=0;
 	int index_e=0;
 	while(1)
@@ -60,14 +61,14 @@ void PLAYER::operate(AI &a,DISPLAY &d)
 		if(targethp_p==0)
 		{
 			d.draw(a,*this);
-			std::cout<<"´Ë¿¨Æ¬ÒÑÊ§È¥Õ½¶·ÄÜÁ¦. ÇëÖØÐÂÊäÈë:"<<std::endl; 
+			std::cout<<"æ­¤å¡ç‰‡å·²å¤±åŽ»æˆ˜æ–—èƒ½åŠ›. è¯·é‡æ–°è¾“å…¥:"<<std::endl; 
 		}
 		else
 		{
 			break;
 		}
 	}
-	std::cout<<"ÇëÊäÈë±»¹¥»÷µÄµÐ·½¿¨Æ¬ÐòºÅ"<<std::endl;
+	std::cout<<"è¯·è¾“å…¥è¢«æ”»å‡»çš„æ•Œæ–¹å¡ç‰‡åºå·"<<std::endl;
 	while(1)
 	{
 		std::cin>>index_e;
@@ -75,7 +76,7 @@ void PLAYER::operate(AI &a,DISPLAY &d)
 		if(targethp_e==0)
 		{
 		    d.draw(a,*this);
-			std::cout<<"¸ÃÄ¿±ê¿¨Æ¬ÒÑÊ§È¥Õ½¶·ÄÜÁ¦. ÇëÖØÐÂÊäÈë£º"<<std::endl; 
+			std::cout<<"è¯¥ç›®æ ‡å¡ç‰‡å·²å¤±åŽ»æˆ˜æ–—èƒ½åŠ›. è¯·é‡æ–°è¾“å…¥ï¼š"<<std::endl; 
 		}
 		else
 		{
@@ -92,7 +93,7 @@ void PLAYER::operate(AI &a,DISPLAY &d)
 	{
 		std::string new_hp1("0");
 		a.Adata[index_e*3]=new_hp1;
-		std::cout<<attacker<<"»÷°ÜÁË"<<is_attacked<<std::endl; 
+		std::cout<<attacker<<"å‡»è´¥äº†"<<is_attacked<<std::endl; 
 		Sleep(1000);
 	}
 	else if(hp>=damage)

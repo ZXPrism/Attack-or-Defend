@@ -46,9 +46,9 @@ void CARD::display()
 	std::cout<<"****************THE DATA OF THE CARDS****************"<<std::endl;
 	for(int m=1;m<=this->Camount;m++)
 	{
-		std::cout<<"Ãû³Æ:"<<this->Cdata[3*m-2]<<std::endl;
-		std::cout<<"¹¥»÷Á¦:"<<this->Cdata[3*m-1]<<std::endl;
-		std::cout<<"ÉúÃüÖµ:"<<this->Cdata[3*m]<<std::endl;
+		std::cout<<"åç§°:"<<this->Cdata[3*m-2]<<std::endl;
+		std::cout<<"æ”»å‡»åŠ›:"<<this->Cdata[3*m-1]<<std::endl;
+		std::cout<<"ç”Ÿå‘½å€¼:"<<this->Cdata[3*m]<<std::endl;
 	}
 }
 

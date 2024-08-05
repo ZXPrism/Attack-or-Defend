@@ -3,7 +3,6 @@
 #include <Windows.h>
 #include "cards.h"
 #include "AI.h"
-#include "user.h"
 #include "player.h"
 #include "display.h"
 #include "aodsystem.h"
@@ -46,12 +45,13 @@ int main()
     DISPLAY display_module(ver);
     display_module.logo();
     AODSYS aodsys_module(ver);
-    CARD card_module(5,"D:\\cards.txt");
+    CARD card_module(5,"cards.db");
     //card_module.display();
+	std::system("chcp 65001");
     while(1)
     { 
         battle(card_module,display_module,aodsys_module);
-        std::cout<<"ÖØÍæ?ÊäÈë1ÖØÐÂ¿ªÊ¼ÓÎÏ·£¬ÊäÈë0½áÊøÓÎÏ·"<<std::endl;
+        std::cout<<"é‡çŽ©?è¾“å…¥1é‡æ–°å¼€å§‹æ¸¸æˆï¼Œè¾“å…¥0ç»“æŸæ¸¸æˆ"<<std::endl;
         int choice=0;
 		std::cin>>choice; 
 		if(choice==1)
@@ -64,13 +64,13 @@ int main()
 		}
 		else if(choice==2)
 		{
-			std::cout<<"ÂÒÊäÊÇ²»¶ÔµÄÅ¶!"<<std::endl;
+			std::cout<<"ä¹±è¾“æ˜¯ä¸å¯¹çš„å“¦!"<<std::endl;
 			Sleep(1000);
 			break;
 		}
 		else if(choice==666)
 		{
-			std::cout<<"Ð»Ð»¿ä½±."<<std::endl;
+			std::cout<<"è°¢è°¢å¤¸å¥–."<<std::endl;
 			Sleep(1000);
 			break;
 		}

@@ -1,9 +1,6 @@
 #ifndef PLAYER_H
 #define PLAYER_H
 #include "cards.h"
-#include "AI.h"
-#include "aodsystem.h"
-#include "display.h"
 class AI;
 class DISPLAY;
 class PLAYER

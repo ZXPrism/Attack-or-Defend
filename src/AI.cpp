@@ -9,7 +9,7 @@
 void AI::damage_display(std::string attacker,std::string is_attacked,int damage)
 {
 	std::cout<<std::endl;
-	std::cout<<attacker<<"¸ø"<<is_attacked<<"Ôì³ÉÁË"<<damage<<"µãÉËº¦"<<std::endl;
+	std::cout<<attacker<<"ç»™"<<is_attacked<<"é€ æˆäº†"<<damage<<"ç‚¹ä¼¤å®³"<<std::endl;
 	Sleep(1500);
 }
 
@@ -82,7 +82,7 @@ void AI::attack(PLAYER &p,DISPLAY &d)
 	{
 		std::string new_hp1("0");
 		p.Pdata[3*result2]=new_hp1;
-		std::cout<<attacker<<"»÷°ÜÁË"<<is_attacked<<std::endl; 
+		std::cout<<attacker<<"å‡»è´¥äº†"<<is_attacked<<std::endl; 
 		Sleep(1000);
 	}
 	

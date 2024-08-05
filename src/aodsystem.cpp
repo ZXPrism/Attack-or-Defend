@@ -1,6 +1,7 @@
 #include <iostream>
 #include "aodsystem.h"
 #include "cards.h"
+#include "AI.h"
 
 int AODSYS::judge(PLAYER &p,AI &a)
 {

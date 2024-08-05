@@ -2,10 +2,9 @@
 #define DISPLAY_H
 #include <iostream>
 #include <string>
-#include "AI.h"
-#include "PLAYER.h"
-class PLAYER;
+#include "player.h"
 class AI;
+class PLAYER;
 class DISPLAY
 {
 	public:

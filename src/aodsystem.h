@@ -2,7 +2,6 @@
 #define AODSYS_H
 #include <string>
 #include "player.h"
-#include "AI.h"
 
 class AI;
 class PLAYER;
