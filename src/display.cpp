@@ -1,10 +1,10 @@
 #include <iostream>
 #include <string>
 #include <cstdlib>
-#include <Windows.h>
 #include "display.h"
 #include "AI.h"
 
+#include "os.h"
 void DISPLAY::logo()
 {
 	std::cout<<"               "<<"----------Attack or Defend I [Console 32bit]----------"<<std::endl;
@@ -13,12 +13,12 @@ void DISPLAY::logo()
 	Sleep(1000);
 	std::cout<<"                        "<<">>>>>>>>>"<<this->version<<"<<<<<<<<"<<std::endl;
 	Sleep(1500);
-	std::system("cls");
+    Clear();
 }
 
 void DISPLAY::draw(AI &a,PLAYER &p)
 {
-	std::system("cls");
+    Clear();
 	std::cout<<"********************************************************"<<std::endl;
 	std::cout<<"我方"<<"                         "<<"敌方"<<std::endl;
 	for(int n=1;n<=a.Aamount;n++)

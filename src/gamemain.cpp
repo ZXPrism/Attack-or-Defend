@@ -1,6 +1,6 @@
 #include <iostream>
 #include <cstdlib>
-#include <Windows.h>
+#include "os.h"
 #include "cards.h"
 #include "AI.h"
 #include "player.h"
@@ -23,7 +23,7 @@ void battle(CARD &c,DISPLAY &d,AODSYS &a)
 		{
 			std::cout<<"The winner is you!!!Congratuation to you!!!"<<std::flush;
 			Sleep(2000);
-			std::system("cls");
+            Clear();
 			break;
 		}
 		ai_module.decide(player_module,d);
@@ -33,7 +33,7 @@ void battle(CARD &c,DISPLAY &d,AODSYS &a)
 		{
 			std::cout<<"You lose! Try to be the winner next time!"<<std::flush;
 			Sleep(2000);
-			std::system("cls");
+            Clear();
 			break;
 		}
 	}
@@ -47,7 +47,7 @@ int main()
     AODSYS aodsys_module(ver);
     CARD card_module(5,"cards.db");
     //card_module.display();
-	std::system("chcp 65001");
+    Change_code_to_utf8();
     while(1)
     { 
         battle(card_module,display_module,aodsys_module);

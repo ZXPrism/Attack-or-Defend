@@ -6,6 +6,7 @@
 #include <algorithm>
 #include <sstream>
 #include "cards.h"
+#include "os.h"
 
 int CARD::showamount()
 {
@@ -42,7 +43,7 @@ void CARD::reset()
 
 void CARD::display()
 {
-	std::system("cls");
+    Clear();
 	std::cout<<"****************THE DATA OF THE CARDS****************"<<std::endl;
 	for(int m=1;m<=this->Camount;m++)
 	{
