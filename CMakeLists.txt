@@ -18,11 +18,6 @@ add_custom_command(TARGET ${TARGET_NAME} POST_BUILD
     ${PROJ_BINARY_DIR}/AoD.exe
 )
 
-add_custom_command(TARGET ${TARGET_NAME} POST_BUILD
-    COMMAND ${CMAKE_COMMAND} -E copy
-    ${PROJ_ROOT_DIR}/cards.db
-    ${PROJ_BINARY_DIR}/cards.db
-)
 set(CMAKE_BUILD_TYPE Debug)
 if(CMAKE_COMPILER_IS_GNUCC)
   set(CMAKE_C_FLAGS_DEBUG "${CMAKE_C_FLAGS_DEBUG} -g")
