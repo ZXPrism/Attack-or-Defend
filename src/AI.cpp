@@ -3,7 +3,8 @@
 #include <random>
 #include <vector>
 #include <algorithm>
-#include <Windows.h>
+
+#include "os.h"
 #include "AI.h"
 
 void AI::damage_display(std::string attacker,std::string is_attacked,int damage)

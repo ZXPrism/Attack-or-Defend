@@ -1,6 +1,6 @@
 #include <iostream>
 #include <vector>
-#include <Windows.h>
+#include "os.h"
 #include "player.h"
 #include "AI.h"
 
@@ -13,7 +13,7 @@ void PLAYER::damage_display(std::string attacker,std::string is_attacked,int dam
 
 void PLAYER::selectcard(CARD &c)
 {
-	std::system("cls");
+    Clear();
 	std::string nulldata("0");
 	this->Pdata.push_back(nulldata);
 	std::vector<int> selected;
