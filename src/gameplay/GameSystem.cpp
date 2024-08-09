@@ -3,6 +3,7 @@
 #include "CardManager.h"
 #include "Console.h"
 #include "PlayerBot.h"
+#include "UI.h"
 #include "Utils.h"
 #include "card/Card_TestCard.h"
 #include "card/Card_ZXP4.h"
@@ -20,6 +21,12 @@ namespace aod {
         console.SetWindowTitle(title);
         console.SetCursorVisibility(false);
         console.ClearScreen();
+
+        DissolveTextCentered("Attack or Defend ~ Re Ver.");
+        SleepFor(2000);
+        console.ClearScreen();
+        DissolveTextCentered("Presented by ZXP4");
+        SleepFor(2000);
 
         _InitCards();
     }
