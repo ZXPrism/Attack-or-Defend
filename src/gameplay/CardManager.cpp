@@ -6,9 +6,14 @@
 
 namespace aod {
 
-    const std::vector<std::string> &CardManager::GetCardNameMap() const
+    const Card &CardManager::GetSampleCard(int cardID) const
     {
-        return _CardNameMap;
+        return _CardFactoryMap.at(cardID)->GetSampleCard();
+    }
+
+    int CardManager::GetCardCnt() const
+    {
+        return _CardFactoryMap.size();
     }
 
 } // namespace aod

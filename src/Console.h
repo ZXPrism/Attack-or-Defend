@@ -18,7 +18,7 @@ namespace aod {
         virtual void SetColor(Color fgColor, Color bgColor) = 0;
         virtual void ClearScreen() = 0;
         virtual void SetCursorVisibility(bool visibility) = 0;
-        virtual int GetCharNonblocking() = 0;
+        [[nodiscard]] virtual int GetCharNonblocking() = 0;
 
         static Console &GetInstance();
     };

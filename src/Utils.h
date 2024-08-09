@@ -7,6 +7,6 @@ namespace aod {
     constexpr unsigned DEFAULT_WINDOW_HEIGHT = 30;
 #endif
 
-    void SleepFor(int second);
+    void SleepFor(int ms);
 
 } // namespace aod
