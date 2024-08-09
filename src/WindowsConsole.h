@@ -21,6 +21,7 @@ namespace aod {
         virtual void SetColor(Color fgColor, Color bgColor) override;
         virtual void ClearScreen() override;
         virtual void SetCursorVisibility(bool visibility) override;
+        virtual int GetCharNonblocking() override;
 
     private:
         HANDLE _consoleHandle;

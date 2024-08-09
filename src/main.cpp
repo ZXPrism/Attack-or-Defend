@@ -1,26 +1,12 @@
-#include "Console.h"
-
-#include <iostream>
+#include "gameplay/GameSystem.h"
 
 int main(int argc, char *argv[])
 {
-    std::string title("Attack or Defend ~ Re Ver.");
+    aod::GameSystem sys;
 
-    auto &console = aod::Console::GetInstance();
-    console.SetWindowTitle(title);
-    console.SetCursorVisibility(false);
-    console.ClearScreen();
-
-    console.MoveCursor(20, 10);
-    std::cout << aod::Color::LIGHTGREEN << title;
-
-    console.MoveCursor(50, 12);
-    std::cout << aod::Color::LIGHTPURPLE << title;
-
-    console.MoveCursor(30, 14);
-    std::cout << aod::Color::LIGHTBLUE << title;
-
-    std::cin.get();
+    sys.Init();
+    sys.Run();
+    sys.Shutdown();
 
     return 0;
 }
