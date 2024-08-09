@@ -4,11 +4,14 @@ namespace aod {
 
     struct ActionStatus
     {
-        // src - phase 1
+        // attacker
+        int _AttackerCardID;
         bool _IsCritHit;
         int _Damage;
+        int _KillCnt;
 
-        // dest - phase 2
+        // target
+        int _TargetCardID;
         bool _IsDead = false;
     };
 

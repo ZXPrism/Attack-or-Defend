@@ -7,15 +7,15 @@ namespace aod {
         TestCard::TestCard()
         {
             _Name = "TestCard";
-            _HP = 123;
-            _AttackPower = 456;
-            _CritRate = 0.5;
+            _HP = 1;
+            _AttackPower = 1000000;
+            _CritRate = 1.0;
             _CritFactor = 2.0;
         }
 
-        ActionStatus TestCard::Attack(Card &target)
+        void TestCard::Attack(ActionStatus &status, Card &target)
         {
-            return Card::Attack(target);
+            return Card::Attack(status, target);
         }
 
         void TestCard::OnAttacked(ActionStatus &attackStatus)

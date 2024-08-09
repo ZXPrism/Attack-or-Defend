@@ -18,10 +18,10 @@ namespace aod {
         double GetCritRate() const;
         double GetCritFactor() const;
 
-        virtual ActionStatus Attack(Card &target);
+        virtual void Attack(ActionStatus &status, Card &target);
 
     protected:
-        virtual void OnAttacked(ActionStatus &attackStatus);
+        virtual void OnAttacked(ActionStatus &status);
 
     protected:
         std::string _Name;

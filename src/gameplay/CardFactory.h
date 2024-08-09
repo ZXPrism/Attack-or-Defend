@@ -12,6 +12,7 @@ namespace aod {
         virtual ~ICardFactory() = default;
 
         [[nodiscard]] virtual const Card &GetSampleCard() const = 0;
+        [[nodiscard]] virtual std::shared_ptr<Card> AllocCard() const = 0;
     };
 
     template <typename T>
@@ -19,17 +20,16 @@ namespace aod {
     {
     public:
         [[nodiscard]] virtual const Card &GetSampleCard() const override;
-
-        [[nodiscard]] std::shared_ptr<T> AllocCard();
+        [[nodiscard]] virtual std::shared_ptr<Card> AllocCard() const override;
 
     private:
         T _SampleCard;
     };
 
     template <typename T>
-    std::shared_ptr<T> CardFactory<T>::AllocCard()
+    std::shared_ptr<Card> CardFactory<T>::AllocCard() const
     {
-        return std::make_shared<T>();
+        return std::static_pointer_cast<Card>(std::make_shared<T>());
     }
 
     template <typename T>

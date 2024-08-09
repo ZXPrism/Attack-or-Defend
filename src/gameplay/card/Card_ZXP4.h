@@ -6,10 +6,10 @@ namespace aod {
 
     namespace card {
 
-        class TestCard : public Card
+        class ZXP4 : public Card
         {
         public:
-            TestCard();
+            ZXP4();
 
             virtual void Attack(ActionStatus &status, Card &target) override;
 

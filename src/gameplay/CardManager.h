@@ -4,7 +4,7 @@
 #include "card/Card.h"
 
 #include <memory>
-#include <unordered_map>
+#include <vector>
 
 namespace aod {
 
@@ -14,6 +14,7 @@ namespace aod {
         template <typename T>
         void RegisterCard();
 
+        [[nodiscard]] std::shared_ptr<Card> AllocCard(int cardID) const;
         [[nodiscard]] const Card &GetSampleCard(int cardID) const;
         [[nodiscard]] int GetCardCnt() const;
 
@@ -26,5 +27,7 @@ namespace aod {
     {
         _CardFactoryMap.push_back(std::make_shared<CardFactory<T>>());
     }
+
+    extern CardManager gCardManager;
 
 } // namespace aod

@@ -1,8 +1,6 @@
 #pragma once
 
-#include "CardManager.h"
-
-#include <vector>
+#include "Player.h"
 
 namespace aod {
 
@@ -13,13 +11,17 @@ namespace aod {
         void Run();
         void Shutdown();
 
-        void Menu_SelectCards();
+        void SelectCards();
+        void Battle();
+
+        void PrintPlayerDecks();
 
     private:
         void _InitCards();
 
     private:
-        CardManager _CardManager;
+        std::unique_ptr<Player> _playerA; // human
+        std::unique_ptr<Player> _playerB; // bot
     };
 
 } // namespace aod

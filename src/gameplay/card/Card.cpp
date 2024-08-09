@@ -29,7 +29,7 @@ namespace aod {
         return _CritFactor;
     }
 
-    ActionStatus Card::Attack(Card &target)
+    void Card::Attack(ActionStatus &status, Card &target)
     {
         static std::mt19937_64 sRndEng;
 
@@ -45,25 +45,22 @@ namespace aod {
             damage *= _CritFactor;
         }
 
-        ActionStatus status;
         status._Damage = damage;
         status._IsCritHit = critTestResult;
 
         target.OnAttacked(status);
-
-        return status;
     }
 
-    void Card::OnAttacked(ActionStatus &attackStatus)
+    void Card::OnAttacked(ActionStatus &status)
     {
-        if (attackStatus._Damage >= _HP)
+        if (status._Damage >= _HP)
         {
             _HP = 0;
-            attackStatus._IsDead = true;
+            status._IsDead = true;
         }
         else
         {
-            _HP -= attackStatus._Damage;
+            _HP -= status._Damage;
         }
     }
 
